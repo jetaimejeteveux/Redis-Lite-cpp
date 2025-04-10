@@ -19,4 +19,10 @@ namespace redis_lite
         }
         return std::nullopt;
     }
+
+    bool Store::del(const std::string &key)
+    {
+        return false;
+    }
+
 }
