@@ -22,6 +22,12 @@ namespace redis_lite
 
     bool Store::del(const std::string &key)
     {
+        std::lock_guard lock(mutex_);
+        if (auto it = data_.find(key); it != data_.end())
+        {
+            data_.erase(key);
+            return true;
+        }
         return false;
     }
 
