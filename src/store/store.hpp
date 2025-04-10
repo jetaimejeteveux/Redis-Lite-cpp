@@ -30,7 +30,7 @@ namespace redis_lite
         std::unordered_map<std::string, std::string> data_;
 
         // Mutex for thread safety
-        mutable std::mutex mutex;
+        mutable std::mutex mutex_;
     };
 }
 
