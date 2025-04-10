@@ -9,7 +9,7 @@ namespace
         redis_lite::Store store;
     };
 
-    // Test Store::set method;
+    // Test Store::set method
     TEST_F(StoreTest, SetStoresValue)
     {
         // Test Store::set method
