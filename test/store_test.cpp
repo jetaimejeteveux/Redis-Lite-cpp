@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "src/store/store.hpp"
+#include "store/store.hpp"
 
 namespace
 {
