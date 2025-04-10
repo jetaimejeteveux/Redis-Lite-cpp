@@ -51,4 +51,31 @@ namespace
         EXPECT_FALSE(value.has_value());
     }
 
+    TEST_F(StoreTest, DelCanRemoveExistingKey)
+    {
+        // Arrange
+        std::string key = "new-key";
+        std::string value = "new-value";
+        store.set(key, value);
+
+        // Act
+        bool isDeleted = store.del(key);
+        auto result = store.get(key);
+
+        // Assert
+        EXPECT_TRUE(isDeleted);
+        EXPECT_FALSE(result.has_value());
+    }
+
+    TEST_F(StoreTest, DelReturnFalseForNonExistingKey)
+    {
+        // Arrange
+        std::string key = "new-key";
+
+        // Act
+        bool isDeleted = store.del(key);
+
+        // Assert
+        EXPECT_FALSE(isDeleted);
+    }
 }
